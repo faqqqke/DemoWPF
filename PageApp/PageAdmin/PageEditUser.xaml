@@ -1,0 +1,57 @@
+﻿<Page x:Class="DemoWPF.PageApp.PageAdmin.PageEditUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoWPF.PageApp.PageAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageEditUser">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <DataGrid Height="300"
+                      AutoGenerateColumns="False"
+                      Name="gridviewUsers"
+                      CanUserAddRows="False"
+                      IsReadOnly="True" Width="730">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Binding="{Binding Path= UserID}"
+                        Width="100"
+                        Header="UserID"/>
+
+                    <DataGridTextColumn 
+                        Binding="{Binding Path= UserSurname}"
+                        Width="150"
+                        Header="Фамилия"/>
+
+                    <DataGridTextColumn 
+                        Binding="{Binding Path= UserName}"
+                        Width="150"
+                        Header="Имя"/>
+
+                    <DataGridTextColumn 
+                        Binding="{Binding Path= UserPatronymic}"
+                        Width="150"
+                        Header="Отчество"/>
+
+                    <DataGridTextColumn 
+                        Binding="{Binding Path= UserRole}"
+                        Width="100"
+                        Header="IDRole"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Button Name="btnEditUser"
+                Content="Изменить"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Style="{StaticResource buttonAdmin}"
+                Click="btnEditUser_Click">
+        </Button>
+    </Grid>
+</Page>
